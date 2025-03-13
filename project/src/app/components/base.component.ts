@@ -15,13 +15,13 @@ export class BaseComponent {
   increment() {
     this.counter++;
     console.log(`${this.getComponentName()} counter incremented to ${this.counter}`);
-    this.cdr.markForCheck();
+    // this.cdr.markForCheck();
   }
 
   decrement() {
     this.counter--;
     console.log(`${this.getComponentName()} counter decremented to ${this.counter}`);
-    this.cdr.markForCheck();
+    // this.cdr.markForCheck();
   }
 
   trackChanges() {
