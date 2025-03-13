@@ -1,0 +1,11 @@
+<div class="component onpush-strategy" (click)="trackChanges()">
+  <h3>{{ getComponentName() + ' current changes count' + changesCounter }}</h3>
+  <p>Parent: {{ parentName }}</p>
+  <div class="counter">
+    Counter: {{ counter }}
+    <button (click)="increment()">+</button>
+    <button (click)="decrement()">-</button>
+  </div>
+  <app-child3component1 [parentName]="getComponentName()"></app-child3component1>
+  <app-child3component2 [parentName]="getComponentName()"></app-child3component2>
+</div>

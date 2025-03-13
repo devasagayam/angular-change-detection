@@ -1,0 +1,12 @@
+<div class="app-container">
+  <h1>Angular Change Detection Demo</h1>
+  <div class="global-controls">
+    <h2>Global Counter: {{ globalCounter }}</h2>
+    <button (click)="updateGlobalCounter()">Update Global Counter</button>
+  </div>
+  <div class="components-container">
+    <app-child1 [parentName]="'AppComponent'"></app-child1>
+    <app-child2 [parentName]="'AppComponent'"></app-child2>
+    <app-child3 [parentName]="'AppComponent'"></app-child3>
+  </div>
+</div>

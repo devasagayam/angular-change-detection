@@ -1,0 +1,31 @@
+/* Add application styles & imports to this file! */
+.component {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.counter {
+  margin: 10px 0;
+}
+
+button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.default-strategy {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.onpush-strategy {
+  background-color: rgba(0, 255, 0, 0.1);
+}
