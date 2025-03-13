@@ -24,5 +24,10 @@ export class Child2Component1 extends BaseComponent {
   ) {
     super(globalStateService, cdr);
   }
+  changesCounter = 0;
+  override ngDoCheck(){
+    this.changesCounter  += 1;
+    console.log('view checked and my name is',this.constructor.name)
+  }
     
 }

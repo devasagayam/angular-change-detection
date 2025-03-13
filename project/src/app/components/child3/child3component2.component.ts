@@ -28,4 +28,9 @@ export class Child3Component2 extends BaseComponent {
     this.gloablCounter$ = this.globalStateService.sharedCounter$.pipe(tap((n)=>console.log('recived data',n)
     ))
   }
+  changesCounter = 0;
+  override ngDoCheck(){
+    this.changesCounter  += 1;
+    console.log('view checked and my name is',this.constructor.name)
+  }
 }

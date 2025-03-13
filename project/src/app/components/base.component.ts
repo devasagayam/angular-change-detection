@@ -1,31 +1,34 @@
-import { Component, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, ChangeDetectorRef, DoCheck } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GlobalStateService } from '../services/global-state.service';
 
 @Component({ template: '' })
-export class BaseComponent {
+export class BaseComponent implements DoCheck {
   @Input() parentName = '';
   counter = 0;
-  changesCounter = 0;
   constructor(
     protected globalStateService: GlobalStateService,
     protected cdr: ChangeDetectorRef
   ) {}
 
+  ngDoCheck(){
+    // console.log('view checked and my name is',this.constructor.name)
+  }
   increment() {
     this.counter++;
     console.log(`${this.getComponentName()} counter incremented to ${this.counter}`);
-    // this.cdr.markForCheck();
+    this.cdr.markForCheck();
   }
 
   decrement() {
     this.counter--;
     console.log(`${this.getComponentName()} counter decremented to ${this.counter}`);
-    // this.cdr.markForCheck();
+    this.cdr.markForCheck();
+
   }
 
   trackChanges() {
-    this.changesCounter  += 1;
+    
     console.log(`${this.getComponentName()} Updated`);
   }
 
