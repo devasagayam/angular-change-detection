@@ -2,6 +2,7 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BaseComponent } from '../base.component';
 import { GlobalStateService } from '../../services/global-state.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-child1component2',
@@ -17,11 +18,13 @@ import { GlobalStateService } from '../../services/global-state.service';
   `]
 })
 export class Child1Component2 extends BaseComponent {
+  gloablCounter$:Observable<number>;
   constructor(
     globalStateService: GlobalStateService,
     protected override cdr: ChangeDetectorRef
   ) {
     super(globalStateService, cdr);
+    this.gloablCounter$ = this.globalStateService.sharedCounter$;
   }
   changesCounter = 0;
   override ngDoCheck(){

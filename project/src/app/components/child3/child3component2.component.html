@@ -1,6 +1,6 @@
 <div class="component onpush-strategy" (click)="trackChanges()">
   <H3>Global counter current value: {{gloablCounter$ | async }}</H3>
-  <h4>{{ getComponentName() + ' current changes count' + changesCounter }}</h4>
+  <h4>{{ getComponentName() + ' current changes count' + changesCounter() }}</h4>
   <p>Parent: {{ parentName }}</p>
   <div class="counter">
     Counter: {{ counter }}

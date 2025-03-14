@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BaseComponent } from '../base.component';
 import { GlobalStateService } from '../../services/global-state.service';
@@ -28,9 +28,11 @@ export class Child3Component2 extends BaseComponent {
     this.gloablCounter$ = this.globalStateService.sharedCounter$.pipe(tap((n)=>console.log('recived data',n)
     ))
   }
-  changesCounter = 0;
+  // changesCounter = 0;
+  changesCounter = signal(0)
   override ngDoCheck(){
-    this.changesCounter  += 1;
+    // this.changesCounter  += 1;
+    this.changesCounter.update(count=>count+1)
     console.log('view checked and my name is',this.constructor.name)
   }
 }

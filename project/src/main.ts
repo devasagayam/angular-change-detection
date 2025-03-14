@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { Child1Component } from './app/components/child1/child1.component';
@@ -42,4 +42,6 @@ export class App {
   }
 }
 
-bootstrapApplication(App);
+bootstrapApplication(App,{
+  providers:[provideExperimentalZonelessChangeDetection()]
+});
